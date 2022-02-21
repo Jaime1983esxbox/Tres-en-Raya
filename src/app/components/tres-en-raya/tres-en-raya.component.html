@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>TRES EN RAYA</h1>
+    <div>
+        <table [(ngModel)]="tablero" ngDefaultControl>
+            <tr *ngFor="let fila of [0,1,2]; let i = index">
+                <td *ngFor="let columna of [0,1,2]; let j = index" (click)="turnoJugador(i, j)">
+                    {{tablero[i][j]}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <input *ngIf="partidaTerminada" type="button" value="Volver a Jugar" (click)="volverJugar()">
+</div>
